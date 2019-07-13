@@ -50,6 +50,11 @@ export default {
           icon: 'bubble_chart',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'person',
+          title: 'Login',
+          to: '/login'
         }
       ],
       miniVariant: false,
