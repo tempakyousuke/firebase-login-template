@@ -41,7 +41,16 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/vuetify', '@nuxtjs/eslint-module'],
+  modules: [
+    '@nuxtjs/vuetify',
+    '@nuxtjs/eslint-module',
+    [
+      '@nuxtjs/dotenv',
+      {
+        filename: './config/.env.prod'
+      }
+    ]
+  ],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
