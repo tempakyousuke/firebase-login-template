@@ -1,5 +1,3 @@
-import clonedeep from 'lodash.clonedeep'
-
 export const state = {
   user: {}
 }
@@ -17,6 +15,8 @@ export const actions = {
 
 export const mutations = {
   setUser(state, user) {
-    state.user = clonedeep(user)
+    state.user = {
+      displayName: user.displayName
+    }
   }
 }
