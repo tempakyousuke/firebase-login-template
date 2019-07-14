@@ -3,16 +3,13 @@ export const state = {
 }
 
 export const actions = {
-  async twitterLogin({ commit }) {
+  twitterLogin({ commit }) {
     const provider = new this.$firebase.auth.TwitterAuthProvider()
-    const res = await this.$auth.signInWithPopup(provider)
-    commit('setUser', res.user)
+    this.$auth.signInWithRedirect(provider)
   },
-  async googleLogin({ commit }) {
+  googleLogin({ commit }) {
     const provider = new this.$firebase.auth.GoogleAuthProvider()
-    console.log(provider)
-    const res = await this.$auth.signInWithPopup(provider)
-    commit('setUser', res.user)
+    this.$auth.signInWithRedirect(provider)
   }
 }
 
