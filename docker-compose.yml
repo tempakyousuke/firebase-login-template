@@ -1,7 +1,7 @@
 version: '3.2'
 
 services:
-  which-is-true:
+  myproject:
     build: .
     entrypoint:
       - /bin/sh
@@ -13,4 +13,4 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - .:/app/which-is-true
+      - .:/app/myproject
