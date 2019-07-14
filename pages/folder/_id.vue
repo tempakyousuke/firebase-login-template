@@ -19,6 +19,14 @@ export default {
       folders: []
     }
   },
+  computed: {
+    folderId() {
+      return this.$route.params.id
+    },
+    folderRef() {
+      return this.$firestore.collection('folders').doc(this.folderId)
+    }
+  },
   created() {
     this.getFolders()
   },
@@ -26,7 +34,9 @@ export default {
     async getFolders() {
       try {
         const foldersRef = this.$firestore.collection('folders')
-        const querySnapshot = await foldersRef.where('root', '==', true).get()
+        const querySnapshot = await foldersRef
+          .where('parentId', '==', this.folderId)
+          .get()
         const folders = []
         querySnapshot.forEach((doc) => {
           const data = doc.data()
