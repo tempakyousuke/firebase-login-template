@@ -1,7 +1,7 @@
 <template lang="pug">
 v-container
   v-layout(wrap)
-    v-flex(xs12 sm10 md8)
+    v-flex(xs12)
       v-layout.logo-wrapper(@click='twitter')
         img.logo(:src='twitterLogo')
         v-sheet.logo-text(color='white')
