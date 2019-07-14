@@ -23,6 +23,23 @@ export default {
       googleLogo: googleLogo
     }
   },
+  computed: {
+    isLoggedIn() {
+      return this.$store.state.auth.user.displayName
+    }
+  },
+  watch: {
+    isLoggedIn(v) {
+      if (v) {
+        this.$router.push('/')
+      }
+    }
+  },
+  created() {
+    if (this.isLoggedIn) {
+      this.$router.push('/')
+    }
+  },
   methods: {
     ...mapActions('auth', ['twitterLogin', 'googleLogin'])
   }
