@@ -9,16 +9,16 @@ v-app(dark)
           v-list-tile-title(v-text='item.title')
   v-toolbar(:clipped-left='clipped', fixed, app)
     v-toolbar-side-icon(@click='drawer = !drawer')
-      v-btn(icon, @click.stop='miniVariant = !miniVariant')
-        v-icon {{ `chevron_${miniVariant ? 'right' : 'left'}` }}
-      v-btn(icon, @click.stop='clipped = !clipped')
-        v-icon web
-      v-btn(icon, @click.stop='fixed = !fixed')
-        v-icon remove
-      v-toolbar-title(v-text='title')
-        v-spacer
-          v-btn(icon, @click.stop='rightDrawer = !rightDrawer')
-            v-icon menu
+    v-btn(icon, @click.stop='miniVariant = !miniVariant')
+      v-icon {{ `chevron_${miniVariant ? 'right' : 'left'}` }}
+    v-btn(icon, @click.stop='clipped = !clipped')
+      v-icon web
+    v-btn(icon, @click.stop='fixed = !fixed')
+      v-icon remove
+    v-toolbar-title(v-text='title')
+      v-spacer
+        v-btn(icon, @click.stop='rightDrawer = !rightDrawer')
+          v-icon menu
   v-content
     v-container
       nuxt
