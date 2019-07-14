@@ -2,7 +2,7 @@
 v-app(dark)
   v-navigation-drawer(v-model='drawer', :mini-variant='miniVariant', :clipped='clipped', fixed, app)
     v-list
-      v-list-tile(v-for='(item, i) in items', :key='i', :to='item.to', router, exact)
+      v-list-tile(v-for='(item, i) in menuItems', :key='i', :to='item.to', router, exact)
         v-list-tile-action
           v-icon {{ item.icon }}
         v-list-tile-content
@@ -34,6 +34,8 @@ v-app(dark)
 </template>
 
 <script>
+import clonedeep from 'lodash.clonedeep'
+
 export default {
   data() {
     return {
@@ -50,17 +52,34 @@ export default {
           icon: 'bubble_chart',
           title: 'Inspire',
           to: '/inspire'
-        },
-        {
-          icon: 'person',
-          title: 'Login',
-          to: '/login'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js'
+    }
+  },
+  computed: {
+    isLoggedIn() {
+      return this.$store.state.auth.user.displayName
+    },
+    menuItems() {
+      const items = clonedeep(this.items)
+      if (this.isLoggedIn) {
+        items.push({
+          icon: 'person',
+          title: 'Logout',
+          to: '/logout'
+        })
+      } else {
+        items.push({
+          icon: 'person',
+          title: 'Login',
+          to: '/login'
+        })
+      }
+      return items
     }
   },
   async mounted() {
