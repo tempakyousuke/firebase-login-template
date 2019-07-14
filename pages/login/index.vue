@@ -2,16 +2,17 @@
 v-container
   v-layout(wrap)
     v-flex(xs12)
-      v-layout.logo-wrapper(@click='twitter')
+      v-layout.logo-wrapper(@click='twitterLogin')
         img.logo(:src='twitterLogo')
         v-sheet.logo-text(color='white')
           | Sign in with Twitter
-      v-layout.google-logo.logo-wrapper(@click='google')
+      v-layout.google-logo.logo-wrapper(@click='googleLogin')
         img.logo(:src='googleLogo')
         v-sheet.logo-text(color='#4285F4')
           | Sign in with Google
 </template>
 <script>
+import { mapActions } from 'vuex'
 import twitterLogo from '@/assets/img/logo/twitterLogo.svg'
 import googleLogo from '@/assets/img/logo/googleLogo.svg'
 
@@ -23,8 +24,7 @@ export default {
     }
   },
   methods: {
-    twitter() {},
-    google() {}
+    ...mapActions('auth', ['twitterLogin', 'googleLogin'])
   }
 }
 </script>
