@@ -62,6 +62,19 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js'
     }
+  },
+  async mounted() {
+    const user = await this.auth()
+    this.$store.commit('auth/setUser', user)
+  },
+  methods: {
+    auth() {
+      return new Promise((resolve, reject) => {
+        this.$auth.onAuthStateChanged((user) => {
+          resolve(user || false)
+        })
+      })
+    }
   }
 }
 </script>
