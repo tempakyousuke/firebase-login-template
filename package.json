@@ -7,6 +7,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:changed": "git diff --name-only --relative | grep -e '\\.js$' -e '.vue$' | xargs npx eslint --ext .js,.vue --fix",
+    "deploy": "firebase deploy --only hosting",
     "precommit": "yarn lint",
     "test": "jest",
     "dev": "nuxt",
