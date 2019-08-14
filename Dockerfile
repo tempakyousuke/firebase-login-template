@@ -1,4 +1,4 @@
-FROM node:8.16.0-alpine
+FROM node:10.16.2-alpine
 ENV LANG C.UTF-8
 ENV EDITOR vim
 
