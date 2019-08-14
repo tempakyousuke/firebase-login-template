@@ -35,7 +35,7 @@ v-layout(column, justify-center, align-center)
           | Nuxt GitHub
       v-card-actions
         v-spacer
-          v-btn(color='primary', flat, nuxt, to='/inspire')
+          v-btn(color='primary', text, nuxt, to='/inspire')
             | Continue
 
 </template>
