@@ -19,8 +19,8 @@ import googleLogo from '@/assets/img/logo/googleLogo.svg'
 export default {
   data() {
     return {
-      twitterLogo: twitterLogo,
-      googleLogo: googleLogo
+      twitterLogo,
+      googleLogo
     }
   },
   computed: {
