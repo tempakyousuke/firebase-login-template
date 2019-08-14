@@ -19,6 +19,11 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "no-console": "off"
+    "no-console": "off",
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "never"
+    }],
   }
 }
