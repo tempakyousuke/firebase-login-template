@@ -14,11 +14,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/vuetify": "1.2.1",
-    "firebase": "^6.3.5",
-    "firebase-tools": "^7.2.2",
+    "@nuxtjs/vuetify": "1.8.3",
+    "firebase": "^6.6.0",
+    "firebase-tools": "^7.3.1",
     "lodash.clonedeep": "^4.5.0",
-    "nuxt": "^2.8.1"
+    "nuxt": "^2.9.2"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.0",
@@ -28,8 +28,8 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-config-standard": ">=12.0.0",
     "eslint-plugin-import": ">=2.16.0",
     "eslint-plugin-jest": ">=22.3.0",
@@ -38,7 +38,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": ">=4.0.1",
     "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
+    "eslint-plugin-vue": "^5.2.3",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "pug": "^2.0.4",
