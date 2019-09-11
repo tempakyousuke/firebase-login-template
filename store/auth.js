@@ -1,5 +1,7 @@
-export const state = {
-  user: {}
+export const state = () => {
+  return {
+    user: {}
+  }
 }
 
 export const actions = {
